@@ -6,7 +6,9 @@ import pandas as pd
 app = Dash(__name__)
 df = pd.read_csv("./final_data.csv")
 df = df.sort_values(by="Date")
-app.layout = html.Div(children=[html.H1(children='Sales of Pink Morsel', style={"textAlign": "center"}),
+app.layout = html.Div(children=[html.H1(children='Sales of Pink Morsel',
+                                        style={"textAlign": "center"},
+                                        id="title"),
                                 dcc.Graph(
                                     id='visualization',
                                     # figure=fig
